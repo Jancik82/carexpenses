@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Fuel Entries</title>
+    <link rel="stylesheet" th:href="@{/css/uikit.min.css}">
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <script th:src="@{js/uikit.min.js}"></script>
+    <script th:src="@{js/uikit-icons.min.js}"></script>
+
+</head>
+<body>
+<div class="uk-container uk-flex uk-flex uk-flex-center uk-column-1-2 uk-background-muted"
+     style="width: 100%; height: 100vh">
+
+    <div class="uk-container">
+        <form class="uk-form-stacked uk-align-left" th:object="${fueladd}" method="post">
+            <div>
+            <fieldset class="uk-fieldset uk-border-rounded">
+            <legend class="uk-legend uk-text-bold">Wprowadź dane</legend>
+            <div class="uk-margin-small">
+                <label class="uk-form-label uk-text-bold">Data tankowania: </label>
+                <div class="uk-form-controls">
+                <input class="uk-input uk-form-width-medium" type="date" th:field="*{refuelingDate}"
+                       required="required"/>
+                    <p class="uk-margin-small" style="font-size: x-small">Data nie może być z przyszłości.</p>
+                </div>
+            </div>
+            <div class="uk-margin-small">
+                <label class="uk-form-label uk-text-bold" for="fueledFuel">Zatankowane paliwo: </label>
+                <div class="uk-form-controls">
+                <input class="uk-input uk-form-width-medium" id="fueledFuel" type="text" th:field="*{fueledFuel}"
+                       pattern="[0-500.]+" required="required">
+                    <p class="uk-margin-small" style="font-size: x-small">Podaj liczbę dodatnią. Wartość dziesiętną oddziel kropką.</p>
+                </div>
+            </div>
+            <div class="uk-margin-small">
+                <label class="uk-form-label uk-text-bold" for="value">Zapłacono: </label>
+                <div class="uk-form-controls">
+                <input class="uk-input uk-form-width-medium" id="value" type="text" th:field="*{value}"
+                       pattern="[0-500.]+" required="required">
+                    <p class="uk-margin-small" style="font-size: x-small">Podaj liczbę dodatnią. Wartość dziesiętną oddziel kropką.</p>
+                </div>
+            </div>
+            <button type="submit" class="uk-button uk-button-primary uk-button-small">Zapisz</button>
+            </fieldset>
+            </div>
+        </form>
+
+        <table class="uk-align-right" border="2">
+            <thead>
+            <tr>
+                <th colspan="4">Tabela tankowania</th>
+            </tr>
+
+            <tr>
+                <th>Id</th>
+                <th>Data tankowania</th>
+                <th>Zatankowane paliwo</th>
+                <th>Zapłacono</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="fuel: ${fuelentries}">
+                <td th:text="${fuel.id}"></td>
+                <td th:text="${fuel.refuelingDate}"></td>
+                <td th:text="${fuel.fueledFuel}"></td>
+                <td th:text="${fuel.value}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
