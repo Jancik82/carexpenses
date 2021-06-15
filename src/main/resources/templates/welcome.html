@@ -9,24 +9,24 @@
     <script th:src="@{js/uikit-icons.min.js}"></script>
 </head>
 <body>
-<div class="uk-container uk-flex uk-flex uk-flex-center uk-flex-column uk-width-1-2" style="background-color: lightgray; width: 100%; height: 100vh">
-    <div class="uk-container uk-margin-medium" style="width: 100%">
+<div class="uk-container uk-background-muted uk-grid uk-padding-small" style="width: 100%; height: 100vh">
+    <div class="uk-margin-medium uk-padding-small" style="width: 100%">
         <h2 class="uk-text-center uk-text-bold" style="color: black">Witaj w aplikacji Car Expenses</h2>
         <h4 class="uk-text-center uk-text-bold" style="color: black">Wydatki na samochód zawsze pod kontrolą</h4>
     </div>
-    <div class="uk-container uk-margin-medium uk-flex uk-flex-center uk-flex-column uk-width-1-2" style="width: 100%">
+    <div class="uk-margin-medium" style="width: 100%">
         <div class="uk-container uk-margin-medium">
             <h4 class="uk-text-center uk-text-bold" style="color: black">Wybierz kategorię</h4>
         </div>
-        <div class="uk-column-1-4@m uk-column-divider">
+        <div class="uk-column-1-4">
         <a th:href="@{/fuel}" class="uk-display-block uk-icon-link uk-margin-small" uk-icon="paint-bucket">
-            <p class="uk-text-center uk-text-bold uk-margin-medium" style="color: black">Tankowanie</p></a>
-        <a href="#" class="uk-display-block uk-icon-link uk-margin-small" uk-icon="cog">
-            <p class="uk-text-center uk-text-bold uk-margin-medium" style="color: black">Serwis</p></a>
-        <a href="#" class="uk-display-block uk-icon-link uk-margin-small" uk-icon="database">
-            <p class="uk-text-center uk-text-bold uk-margin-medium" style="color: black">Stałe</p></a>
-        <a href="#" class="uk-display-block uk-icon-link uk-margin-small" uk-icon="database">
-            <p class="uk-text-center uk-text-bold uk-margin-medium" style="color: black">Różne</p></a>
+            <p class="uk-text-center uk-text-bold uk-margin-medium" style="color: blue">Tankowanie</p></a>
+        <a th:href="@{/service}" class="uk-display-block uk-icon-link uk-margin-small" uk-icon="cog">
+            <p class="uk-text-center uk-text-bold uk-margin-medium" style="color: blue">Serwis</p></a>
+        <a th:href="@{/constant" class="uk-display-block uk-icon-link uk-margin-small" uk-icon="database">
+            <p class="uk-text-center uk-text-bold uk-margin-medium" style="color: blue">Stałe</p></a>
+        <a th:href="@{/other" class="uk-display-block uk-icon-link uk-margin-small" uk-icon="database">
+            <p class="uk-text-center uk-text-bold uk-margin-medium" style="color: blue">Różne</p></a>
         </div>
     </div>
 </div>

@@ -1,35 +1,35 @@
 <!DOCTYPE html>
-<html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Fuel Entries</title>
+    <title>Service Entries</title>
     <link rel="stylesheet" th:href="@{/css/uikit.min.css}">
     <link rel="stylesheet" th:href="@{/style.css}">
     <script th:src="@{js/uikit.min.js}"></script>
     <script th:src="@{js/uikit-icons.min.js}"></script>
 </head>
 <body>
-<div class="uk-container uk-background-muted uk-grid uk-padding-small">
+<div class="uk-container  uk-background-muted uk-grid uk-padding-small">
     <div class="uk-width-1-4">
-        <form class="uk-form-stacked uk-align-left" th:object="${fueladd}" method="post">
+        <form class="uk-form-stacked uk-align-left" th:object="${serviceadd}" method="post">
             <fieldset>
                 <legend class="uk-legend uk-text-bold">Wprowadź dane</legend>
                 <div class="uk-margin-small">
-                    <label class="uk-form-label uk-text-bold">Data tankowania: </label>
+                    <label class="uk-form-label uk-text-bold">Data: </label>
                     <div class="uk-form-controls">
-                        <input class="uk-input uk-form-width-medium" type="date" th:field="*{refuelingDate}"
+                        <input class="uk-input uk-form-width-medium" type="date" th:field="*{serviceDate}"
                                required="required"/>
                         <p class="uk-margin-small" style="font-size: x-small">Data nie może być z przyszłości.</p>
                     </div>
                 </div>
                 <div class="uk-margin-small">
-                    <label class="uk-form-label uk-text-bold" for="fueledFuel">Zatankowane paliwo: </label>
+                    <label class="uk-form-label uk-text-bold" for="description">Opis: </label>
                     <div class="uk-form-controls">
-                        <input class="uk-input uk-form-width-medium" id="fueledFuel" type="text"
-                               th:field="*{fueledFuel}"
-                               pattern="[0-500.]+" required="required">
-                        <p class="uk-margin-small" style="font-size: x-small">Podaj liczbę dodatnią. Wartość
-                            dziesiętną oddziel kropką.</p>
+                        <input class="uk-input uk-form-width-medium" id="description" type="text"
+                               th:field="*{description}"
+                               required="required">
+                        <p class="uk-margin-small" style="font-size: x-small">Liczba znaków powinna mieć długość od
+                            3 do 50</p>
                     </div>
                 </div>
                 <div class="uk-margin-small">
@@ -37,8 +37,8 @@
                     <div class="uk-form-controls">
                         <input class="uk-input uk-form-width-medium" id="cost" type="text" th:field="*{cost}"
                                pattern="[0-9.]+" required="required">
-                        <p class="uk-margin-small" style="font-size: x-small">
-                            Podaj liczbę dodatnią. Wartość dziesiętną oddziel kropką.</p>
+                        <p class="uk-margin-small" style="font-size: x-small">Podaj liczbę dodatnią. Wartość
+                            dziesiętną oddziel kropką.</p>
                     </div>
                 </div>
                 <button type="submit" class="uk-button uk-button-primary uk-button-small">Zapisz</button>
@@ -48,21 +48,21 @@
     <div class="uk-width-3-4">
         <div class="uk-container">
             <table class="uk-align-right" border="2" style="width: 100%; table-layout: fixed">
-                <caption class="uk-text-bold uk-text-center">Tabela tankowania</caption>
+                <caption style="width: 100%" class="uk-text-bold uk-text-center">Tabela serwisowa</caption>
                 <thead>
                 <tr>
                     <th class="uk-width-small">Id</th>
                     <th class="uk-width-medium">Data</th>
-                    <th class="uk-width-medium">Zatankowane paliwo</th>
+                    <th class="uk-width-2xlarge">Opis</th>
                     <th class="uk-width-medium">Zapłacono</th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr th:each="fuel: ${fuelentries}">
-                    <td th:text="${fuel.id}"></td>
-                    <td th:text="${#dates.format(fuel.refuelingDate, 'yyyy MM dd')}"></td>
-                    <td th:text="${#numbers.formatDecimal(fuel.fueledFuel, 1, 'DEFAULT', 2, 'DEFAULT')} + ' l'"></td>
-                    <td th:text="${#numbers.formatDecimal(fuel.cost, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
+                <tbody style="width: 100%">
+                <tr th:each="service: ${serviceentries}">
+                    <td th:text="${service.id}"></td>
+                    <td th:text="${#dates.format(service.serviceDate, 'yyyy MM dd')}"></td>
+                    <td th:text="${service.description}"></td>
+                    <td th:text="${#numbers.formatDecimal(service.cost, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
                 </tr>
                 </tbody>
             </table>
