@@ -11,39 +11,41 @@
 <body>
 <div class="uk-container uk-background-muted uk-grid uk-padding-small">
     <div class="uk-width-1-4">
-        <form class="uk-form-stacked uk-align-left" th:object="${fueladd}" method="post">
-            <fieldset>
-                <legend class="uk-legend uk-text-bold">Wprowadź dane</legend>
-                <div class="uk-margin-small">
-                    <label class="uk-form-label uk-text-bold">Data tankowania: </label>
-                    <div class="uk-form-controls">
-                        <input class="uk-input uk-form-width-medium" type="date" th:field="*{refuelingDate}"
-                               required="required"/>
-                        <p class="uk-margin-small" style="font-size: x-small">Data nie może być z przyszłości.</p>
+        <div class="uk-container">
+            <form class="uk-form-stacked uk-align-left" th:object="${fueladd}" method="post">
+                <fieldset>
+                    <legend class="uk-legend uk-text-bold">Wprowadź dane</legend>
+                    <div class="uk-margin-small">
+                        <label class="uk-form-label uk-text-bold">Data tankowania: </label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input uk-form-width-medium" type="date" th:field="*{refuelingDate}"
+                                   required="required"/>
+                            <p class="uk-margin-small" style="font-size: x-small">Data nie może być z przyszłości.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="uk-margin-small">
-                    <label class="uk-form-label uk-text-bold" for="fueledFuel">Zatankowane paliwo: </label>
-                    <div class="uk-form-controls">
-                        <input class="uk-input uk-form-width-medium" id="fueledFuel" type="text"
-                               th:field="*{fueledFuel}"
-                               pattern="[0-500.]+" required="required">
-                        <p class="uk-margin-small" style="font-size: x-small">Podaj liczbę dodatnią. Wartość
-                            dziesiętną oddziel kropką.</p>
+                    <div class="uk-margin-small">
+                        <label class="uk-form-label uk-text-bold" for="fueledFuel">Zatankowane paliwo: </label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input uk-form-width-medium" id="fueledFuel" type="text"
+                                   th:field="*{fueledFuel}"
+                                   pattern="[0-500.]+" required="required">
+                            <p class="uk-margin-small" style="font-size: x-small">Podaj liczbę dodatnią. Wartość
+                                dziesiętną oddziel kropką.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="uk-margin-small">
-                    <label class="uk-form-label uk-text-bold" for="cost">Zapłacono: </label>
-                    <div class="uk-form-controls">
-                        <input class="uk-input uk-form-width-medium" id="cost" type="text" th:field="*{cost}"
-                               pattern="[0-9.]+" required="required">
-                        <p class="uk-margin-small" style="font-size: x-small">
-                            Podaj liczbę dodatnią. Wartość dziesiętną oddziel kropką.</p>
+                    <div class="uk-margin-small">
+                        <label class="uk-form-label uk-text-bold" for="cost">Zapłacono: </label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input uk-form-width-medium" id="cost" type="text" th:field="*{cost}"
+                                   pattern="[0-9.]+" required="required">
+                            <p class="uk-margin-small" style="font-size: x-small">
+                                Podaj liczbę dodatnią. Wartość dziesiętną oddziel kropką.</p>
+                        </div>
                     </div>
-                </div>
-                <button type="submit" class="uk-button uk-button-primary uk-button-small">Zapisz</button>
-            </fieldset>
-        </form>
+                    <button type="submit" class="uk-button uk-button-primary uk-button-small">Zapisz</button>
+                </fieldset>
+            </form>
+        </div>
     </div>
     <div class="uk-width-3-4">
         <div class="uk-container">

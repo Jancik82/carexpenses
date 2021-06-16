@@ -1,7 +1,6 @@
 package pl.edu.wszib.ce.carexpenses.model;
 
 import com.sun.istack.NotNull;
-import org.hibernate.validator.constraints.Currency;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Entity;
@@ -16,7 +15,7 @@ import java.util.Date;
 public class FuelEntries {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull

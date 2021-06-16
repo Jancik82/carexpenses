@@ -17,16 +17,15 @@ public class ServiceEntriesController {
     private ServiceEntriesDao serviceEntriesDao;
 
     @GetMapping()
-    public String getAll(Model model){
+    public String getAll(Model model) {
         model.addAttribute("serviceadd", new ServiceEntries());
         model.addAttribute("serviceentries", serviceEntriesDao.findAll());
         return "service";
     }
+
     @PostMapping()
-    public String createTable(ServiceEntries serviceEntries){
+    public String createTable(ServiceEntries serviceEntries) {
         serviceEntriesDao.save(serviceEntries);
         return "redirect:/service";
     }
-
-
 }

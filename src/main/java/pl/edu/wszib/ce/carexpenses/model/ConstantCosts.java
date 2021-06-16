@@ -9,11 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.PastOrPresent;
-import javax.validation.constraints.Size;
 import java.util.Date;
 
 @Entity
-public class ServiceEntries {
+public class ConstantCosts {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,19 +21,18 @@ public class ServiceEntries {
     @NotNull
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @PastOrPresent
-    private Date serviceDate;
+    private Date constantCostsDate;
 
-    @Size(min = 3, max = 50, message = "Liczba znaków powinna mieć długość od 3 do 50")
     private String description;
 
     @Min(value = 1, message = "Wartość musi być liczbą dodatnią")
     private Float cost;
 
-    public ServiceEntries() {
+    public ConstantCosts() {
     }
 
-    public ServiceEntries(Date serviceDate, String description, Float cost) {
-        this.serviceDate = serviceDate;
+    public ConstantCosts(Date constantCostsDate, String description, Float cost) {
+        this.constantCostsDate = constantCostsDate;
         this.description = description;
         this.cost = cost;
     }
@@ -47,12 +45,12 @@ public class ServiceEntries {
         this.id = id;
     }
 
-    public Date getServiceDate() {
-        return serviceDate;
+    public Date getConstantCostsDate() {
+        return constantCostsDate;
     }
 
-    public void setServiceDate(Date serviceDate) {
-        this.serviceDate = serviceDate;
+    public void setConstantCostsDate(Date constantCostsDate) {
+        this.constantCostsDate = constantCostsDate;
     }
 
     public String getDescription() {

@@ -2,7 +2,7 @@
 <html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Service Entries</title>
+    <title>Constant Costs</title>
     <link rel="stylesheet" th:href="@{/css/uikit.min.css}">
     <link rel="stylesheet" th:href="@{/style.css}">
     <script th:src="@{js/uikit.min.js}"></script>
@@ -12,13 +12,13 @@
 <div class="uk-container  uk-background-muted uk-grid uk-padding-small">
     <div class="uk-width-1-4">
         <div class="uk-container">
-            <form class="uk-form-stacked uk-align-left" th:object="${serviceadd}" method="post">
+            <form class="uk-form-stacked uk-align-left" th:object="${constantadd}" method="post">
                 <fieldset>
                     <legend class="uk-legend uk-text-bold">Wprowadź dane</legend>
                     <div class="uk-margin-small">
                         <label class="uk-form-label uk-text-bold">Data: </label>
                         <div class="uk-form-controls">
-                            <input class="uk-input uk-form-width-medium" type="date" th:field="*{serviceDate}"
+                            <input class="uk-input uk-form-width-medium" type="date" th:field="*{constantCostsDate}"
                                    required="required"/>
                             <p class="uk-margin-small" style="font-size: x-small">Data nie może być z przyszłości.</p>
                         </div>
@@ -26,11 +26,18 @@
                     <div class="uk-margin-small">
                         <label class="uk-form-label uk-text-bold" for="description">Opis: </label>
                         <div class="uk-form-controls">
-                            <input class="uk-input uk-form-width-medium" id="description" type="text"
-                                   th:field="*{description}"
-                                   required="required">
-                            <p class="uk-margin-small" style="font-size: x-small">Liczba znaków powinna mieć długość od
-                                3 do 50</p>
+                            <select style="font-size: 13px" id="description" type="text"
+                                    th:field="*{description}" required="required">
+                                <option value="Rata Kredytu/Leasinguz">Rata Kredytu/Leasingu</option>
+                                <option value="Wynajem długoterminowy">Wynajem długoterminowy</option>
+                                <option value="Okresowe badanie techniczne">Okresowe badanie techniczne</option>
+                                <option value="Ubezpieczenie (OC)">Ubezpieczenie (OC)</option>
+                                <option value="Ubezpieczenie (inne)">Ubezpieczenie (inne)</option>
+                                <option value="Płatne miejsce parkowania">Płatne miejsce parkowania</option>
+                                <option value="Okresowe badanie techniczne">Okresowe badanie techniczne</option>
+                                <option value="Inne">Inne</option>
+                            </select>
+                            <p class="uk-margin-small" style="font-size: x-small">Wybierz jedną z opcji.</p>
                         </div>
                     </div>
                     <div class="uk-margin-small">
@@ -47,10 +54,10 @@
             </form>
         </div>
     </div>
-    <div class="uk-width-3-4">
+    <div class="uk-width-3-4 uk-flex uk-flex-center">
         <div class="uk-container">
             <table class="uk-align-right" border="2" style="width: 100%; table-layout: fixed">
-                <caption style="width: 100%" class="uk-text-bold uk-text-center">Tabela serwisowa</caption>
+                <caption style="width: 100%" class="uk-text-bold uk-text-center">Wydatki stałe</caption>
                 <thead>
                 <tr>
                     <th class="uk-width-small">Id</th>
@@ -60,11 +67,11 @@
                 </tr>
                 </thead>
                 <tbody style="width: 100%">
-                <tr th:each="service: ${serviceentries}">
-                    <td th:text="${service.id}"></td>
-                    <td th:text="${#dates.format(service.serviceDate, 'yyyy MM dd')}"></td>
-                    <td th:text="${service.description}"></td>
-                    <td th:text="${#numbers.formatDecimal(service.cost, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
+                <tr th:each="constant: ${constantcosts}">
+                    <td th:text="${constant.id}"></td>
+                    <td th:text="${#dates.format(constant.constantCostsDate, 'yyyy MM dd')}"></td>
+                    <td th:text="${constant.description}"></td>
+                    <td th:text="${#numbers.formatDecimal(constant.cost, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
                 </tr>
                 </tbody>
             </table>

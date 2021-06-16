@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
-import pl.edu.wszib.ce.carexpenses.model.FuelEntries;
 import pl.edu.wszib.ce.carexpenses.model.ServiceEntries;
 
 import java.util.Collection;
@@ -50,6 +49,4 @@ public class ServiceEntriesDaoTest {
         assertEquals(TOTAL_SERVICE, fuelEntries.size(), "Nieprawidłowa liczba wpisów");
         System.out.println("Znaleziona ilość obiektów: " + fuelEntries.size());
     }
-
-
 }
