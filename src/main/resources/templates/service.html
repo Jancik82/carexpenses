@@ -9,6 +9,13 @@
     <script th:src="@{js/uikit-icons.min.js}"></script>
 </head>
 <body>
+<div class="uk-background-secondary uk-flex uk-flex-middle uk-flex-right" style="height: 50px">
+    <a title="Strona główna" th:href="@{/welcome}" class="uk-icon-link uk-margin-small" uk-icon="home"></a>
+    <a title="Wydatki na zakup paliwa" th:href="@{/fuel}" class="uk-icon-link uk-margin-small"
+       uk-icon="paint-bucket"></a>
+    <a title="Koszty stałe" th:href="@{/constant}" class="uk-icon-link uk-margin-small" uk-icon="database"></a>
+    <a title="Pozostałe wydatki" th:href="@{/other}" class="uk-icon-link uk-margin-small" uk-icon="more"></a>
+</div>
 <div class="uk-container  uk-background-muted uk-grid uk-padding-small">
     <div class="uk-width-1-4">
         <div class="uk-container">

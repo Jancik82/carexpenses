@@ -32,7 +32,6 @@ public class ServiceEntriesDaoTest {
         ServiceEntries serviceEntries1 = new ServiceEntries(new Date(), DESCRIPTION1, COST1);
         ServiceEntries serviceEntries2 = new ServiceEntries(new Date(), DESCRIPTION2, COST2);
 
-
         assertNull(serviceEntries1.getId());
         assertNull(serviceEntries2.getId());
 

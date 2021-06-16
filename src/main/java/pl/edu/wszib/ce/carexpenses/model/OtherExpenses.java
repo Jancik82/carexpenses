@@ -9,10 +9,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.PastOrPresent;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 @Entity
-public class FuelEntries {
+public class OtherExpenses {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,22 +22,20 @@ public class FuelEntries {
     @NotNull
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @PastOrPresent
-    private Date refuelingDate;
+    private Date otherExpensesDate;
 
-    @NotNull
-    @Min(value = 1, message = "Wartość musi być liczbą dodatnią")
-    private Float fueledFuel;
+    @Size(min = 3, max = 50, message = "Liczba znaków powinna mieć długość od 3 do 50")
+    private String description;
 
-    @NotNull
     @Min(value = 1, message = "Wartość musi być liczbą dodatnią")
     private Float cost;
 
-    public FuelEntries() {
+    public OtherExpenses() {
     }
 
-    public FuelEntries(Date refuelingDate, Float fueledFuel, Float cost) {
-        this.refuelingDate = refuelingDate;
-        this.fueledFuel = fueledFuel;
+    public OtherExpenses(Date otherExpensesDate, String description, Float cost) {
+        this.otherExpensesDate = otherExpensesDate;
+        this.description = description;
         this.cost = cost;
     }
 
@@ -48,28 +47,27 @@ public class FuelEntries {
         this.id = id;
     }
 
-    public Date getRefuelingDate() {
-        return refuelingDate;
+    public Date getOtherExpensesDate() {
+        return otherExpensesDate;
     }
 
-    public void setRefuelingDate(Date refuelingDate) {
-        this.refuelingDate = refuelingDate;
+    public void setOtherExpensesDate(Date otherExpensesDate) {
+        this.otherExpensesDate = otherExpensesDate;
     }
 
-    public Float getFueledFuel() {
-        return fueledFuel;
+    public String getDescription() {
+        return description;
     }
 
-    public void setFueledFuel(Float fueledFuel) {
-        this.fueledFuel = fueledFuel;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Float getCost() {
         return cost;
     }
 
-    public void setCost(Float value) {
-        this.cost = value;
+    public void setCost(Float cost) {
+        this.cost = cost;
     }
-
 }

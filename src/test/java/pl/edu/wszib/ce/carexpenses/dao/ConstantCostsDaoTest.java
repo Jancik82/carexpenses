@@ -32,7 +32,6 @@ public class ConstantCostsDaoTest {
         ConstantCosts constantCosts1 = new ConstantCosts(new Date(), DESCRIPTION1, COST1);
         ConstantCosts constantCosts2 = new ConstantCosts(new Date(), DESCRIPTION2, COST2);
 
-
         assertNull(constantCosts1.getId());
         assertNull(constantCosts2.getId());
 
@@ -50,4 +49,3 @@ public class ConstantCostsDaoTest {
         System.out.println("Znaleziona ilość obiektów: " + constantCosts.size());
     }
 }
-
