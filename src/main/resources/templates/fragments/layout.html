@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" th:fragment="layout(container)">
+<head>
+    <meta charset="UTF-8">
+    <title>Car expenses</title>
+    <link rel="stylesheet" th:href="@{/css/uikit.min.css}">
+    <script th:src="@{js/uikit.min.js}"></script>
+    <script th:src="@{js/uikit-icons.min.js}"></script>
+</head>
+<body>
+
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+
+<div th:replace="${container}"></div>
+
+</body>
+</html>

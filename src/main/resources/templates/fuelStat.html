@@ -1,21 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8">
-    <title>Statystyki Tankowania</title>
-    <link rel="stylesheet" th:href="@{/css/uikit.min.css}">
-    <link rel="stylesheet" th:href="@{/style.css}">
-    <script th:src="@{js/uikit.min.js}"></script>
-    <script th:src="@{js/uikit-icons.min.js}"></script>
-</head>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" th:replace="~{fragments/layout :: layout(~{::.uk-container})}">
 <body>
-<div class="uk-background-secondary uk-flex uk-flex-middle uk-flex-right" style="height: 50px">
-    <a title="Strona główna" th:href="@{/welcome}" class="uk-icon-link uk-margin-small" uk-icon="home"></a>
-    <a title="Wydatki serwisowe" th:href="@{/service}" class="uk-icon-link uk-margin-small" uk-icon="cog"></a>
-    <a title="Koszty stałe" th:href="@{/constant}" class="uk-icon-link uk-margin-small" uk-icon="database"></a>
-    <a title="Pozostałe wydatki" th:href="@{/other}" class="uk-icon-link uk-margin-small" uk-icon="more"></a>
-</div>
-    <div class="uk-container">
+    <div class="uk-container uk-flex uk-flex-center uk-padding-small">
         <table class="uk-align-right" border="2" style="width: 100%; table-layout: fixed">
             <caption class="uk-text-bold uk-text-center">Statystyki tankowania</caption>
             <tr>

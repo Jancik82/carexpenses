@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:fragment="navbar" class="uk-background-secondary uk-flex uk-flex-middle uk-flex-right uk-navbar " style="height: 40px">
+        <ul class="uk-navbar-nav uk-margin-small">
+            <li>
+                <a title="Strona główna" th:href="@{/welcome}" class="uk-icon-link" uk-icon="home"></a>
+            </li>
+            <li>
+                <a title="Wydatki na zakup paliwa" th:href="@{/fuel}" class="uk-icon-link" uk-icon="paint-bucket"></a>
+            </li>
+            <li>
+                <a title="Wydatki serwisowe" th:href="@{/service}" class="uk-icon-link" uk-icon="cog"></a>
+            </li>
+            <li>
+                <a title="Koszty stałe" th:href="@{/constant}" class="uk-icon-link" uk-icon="database"></a>
+            </li>
+            <li>
+                <a title="Pozostałe wydatki" th:href="@{/other}" class="uk-icon-link" uk-icon="more"></a>
+            </li>
+            <li>
+                <a title="Statystyki tankowania" th:href="@{/fuelStat}" class="uk-icon-link" uk-icon="rss"></a>
+            </li>
+        </ul>
+</div>
+</body>
+</html>

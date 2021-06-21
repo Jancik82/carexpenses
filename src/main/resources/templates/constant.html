@@ -1,25 +1,10 @@
 <!DOCTYPE html>
-<html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8">
-    <title>Constant Costs</title>
-    <link rel="stylesheet" th:href="@{/css/uikit.min.css}">
-    <link rel="stylesheet" th:href="@{/style.css}">
-    <script th:src="@{js/uikit.min.js}"></script>
-    <script th:src="@{js/uikit-icons.min.js}"></script>
-</head>
+<html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml" th:replace="~{fragments/layout :: layout(~{::.uk-container})}">
 <body>
-<div class="uk-background-secondary uk-flex uk-flex-middle uk-flex-right" style="height: 50px">
-    <a title="Strona główna" th:href="@{/welcome}" class="uk-icon-link uk-margin-small" uk-icon="home"></a>
-    <a title="Wydatki na zakup paliwa" th:href="@{/fuel}" class="uk-icon-link uk-margin-small" uk-icon="paint-bucket"></a>
-    <a title="Wydatki serwisowe" th:href="@{/service}" class="uk-icon-link uk-margin-small" uk-icon="cog"></a>
-    <a title="Pozostałe wydatki" th:href="@{/other}" class="uk-icon-link uk-margin-small" uk-icon="more"></a>
-   <!-- <a title="Statystyki" th:href="@{/stat}" class="uk-icon-link uk-margin-small" uk-icon="rss"></a>-->
-</div>
-<div class="uk-container  uk-background-muted uk-grid uk-padding-small">
+<div class="uk-container uk-flex uk-flex-center uk-padding-small">
     <div class="uk-width-1-4">
         <div class="uk-container">
-            <form class="uk-form-stacked uk-align-left" th:object="${constantadd}" method="post">
+            <form class="uk-form-stacked uk-align-left uk-flex uk-flex-left" th:object="${constantadd}" method="post">
                 <fieldset>
                     <legend class="uk-legend uk-text-bold">Wprowadź dane</legend>
                     <div class="uk-margin-small">
