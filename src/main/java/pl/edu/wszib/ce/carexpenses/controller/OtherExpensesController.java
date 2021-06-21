@@ -7,9 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.edu.wszib.ce.carexpenses.dao.OtherExpensesDao;
-import pl.edu.wszib.ce.carexpenses.dao.ServiceEntriesDao;
 import pl.edu.wszib.ce.carexpenses.model.OtherExpenses;
-import pl.edu.wszib.ce.carexpenses.model.ServiceEntries;
 
 @Controller
 @RequestMapping("/other")

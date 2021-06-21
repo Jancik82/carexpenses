@@ -18,8 +18,11 @@ class FuelEntriesDaoTest {
 
     public static final float FUELED_FUEL1 = 43F;
     public static final float COST1 = 246.00F;
+    public static final float DIST1 = 1200.00F;
+
     public static final float FUELED_FUEL2 = 35F;
     public static final float COST2 = 199.50F;
+    public static final float DIST2 = 920.00F;
 
     public static final int TOTAL_FUELS = 2;
 
@@ -28,8 +31,8 @@ class FuelEntriesDaoTest {
 
     @BeforeEach
     void setUp() {
-        FuelEntries fuelEntries1 = new FuelEntries(new Date(), FUELED_FUEL1, COST1);
-        FuelEntries fuelEntries2 = new FuelEntries(new Date(), FUELED_FUEL2, COST2);
+        FuelEntries fuelEntries1 = new FuelEntries(new Date(), FUELED_FUEL1, COST1, DIST1);
+        FuelEntries fuelEntries2 = new FuelEntries(new Date(), FUELED_FUEL2, COST2, DIST2);
 
         assertNull(fuelEntries1.getId());
         assertNull(fuelEntries2.getId());

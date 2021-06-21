@@ -34,9 +34,18 @@
                         <div class="uk-form-controls">
                             <input class="uk-input uk-form-width-medium" id="fueledFuel" type="text"
                                    th:field="*{fueledFuel}"
-                                   pattern="[0-500.]+" required="required">
+                                   pattern="[0-9.]+" required="required">
                             <p class="uk-margin-small" style="font-size: x-small">Podaj liczbę dodatnią. Wartość
                                 dziesiętną oddziel kropką.</p>
+                        </div>
+                    </div>
+                    <div class="uk-margin-small">
+                        <label class="uk-form-label uk-text-bold" for="distance">Przejechane km: </label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input uk-form-width-medium" id="distance" type="text" th:field="*{distance}"
+                                   pattern="[0-9.]+" required="required">
+                            <p class="uk-margin-small" style="font-size: x-small">
+                                Podaj liczbę dodatnią. Wartość dziesiętną oddziel kropką.</p>
                         </div>
                     </div>
                     <div class="uk-margin-small">
@@ -62,6 +71,8 @@
                     <th class="uk-width-small">Id</th>
                     <th class="uk-width-medium">Data</th>
                     <th class="uk-width-medium">Zatankowane paliwo</th>
+                    <th class="uk-width-medium">Przejechane kilometry</th>
+                    <th class="uk-width-medium">Srednie spalanie</th>
                     <th class="uk-width-medium">Zapłacono</th>
                 </tr>
                 </thead>
@@ -70,6 +81,8 @@
                     <td th:text="${fuel.id}"></td>
                     <td th:text="${#dates.format(fuel.refuelingDate, 'yyyy MM dd')}"></td>
                     <td th:text="${#numbers.formatDecimal(fuel.fueledFuel, 1, 'DEFAULT', 2, 'DEFAULT')} + ' l'"></td>
+                    <td th:text="${#numbers.formatDecimal(fuel.distance, 1, 'DEFAULT', 2, 'DEFAULT')}"></td>
+                    <td th:text="${#numbers.formatDecimal(avgfuel, 1, 'DEFAULT', 2, 'DEFAULT')}"></td>
                     <td th:text="${#numbers.formatDecimal(fuel.cost, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
                 </tr>
                 </tbody>

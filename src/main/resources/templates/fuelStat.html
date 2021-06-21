@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Statystyki Tankowania</title>
+    <link rel="stylesheet" th:href="@{/css/uikit.min.css}">
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <script th:src="@{js/uikit.min.js}"></script>
+    <script th:src="@{js/uikit-icons.min.js}"></script>
+</head>
+<body>
+<div class="uk-background-secondary uk-flex uk-flex-middle uk-flex-right" style="height: 50px">
+    <a title="Strona główna" th:href="@{/welcome}" class="uk-icon-link uk-margin-small" uk-icon="home"></a>
+    <a title="Wydatki serwisowe" th:href="@{/service}" class="uk-icon-link uk-margin-small" uk-icon="cog"></a>
+    <a title="Koszty stałe" th:href="@{/constant}" class="uk-icon-link uk-margin-small" uk-icon="database"></a>
+    <a title="Pozostałe wydatki" th:href="@{/other}" class="uk-icon-link uk-margin-small" uk-icon="more"></a>
+</div>
+    <div class="uk-container">
+        <table class="uk-align-right" border="2" style="width: 100%; table-layout: fixed">
+            <caption class="uk-text-bold uk-text-center">Statystyki tankowania</caption>
+            <tr>
+                <td class="uk-form-width-large">Minimalna kwota wydana na jedno tankowanie</td>
+                <td class="uk-form-width-medium" th:text="${#numbers.formatDecimal(minCost, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
+            </tr>
+            <tr>
+                <td class="uk-width-large">Maksymalna kwota wydana na jedno tankowanie</td>
+                <td class="uk-form-width-medium" th:text="${#numbers.formatDecimal(maxCost, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
+            </tr>
+            <tr>
+                <td class="uk-width-large">Srednia kwota wydana na jedno tankowanie</td>
+                <td class="uk-form-width-medium" th:text="${#numbers.formatDecimal(avgCost, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
+            </tr>
+            <tr>
+                <td class="uk-width-large">Minimalna ilość przejechanych kilometrów na jednym tankowaniu</td>
+                <td class="uk-form-width-medium" th:text="${#numbers.formatDecimal(minDist, 1, 'DEFAULT', 2, 'DEFAULT')} + ' km'"></td>
+            </tr>
+            <tr>
+                <td class="uk-width-large">Maksymalna ilość przejechanych kilometrów na jednym tankowaniu</td>
+                <td class="uk-form-width-medium" th:text="${#numbers.formatDecimal(maxDist, 1, 'DEFAULT', 2, 'DEFAULT')} + ' km'"></td>
+            </tr>
+            <tr>
+                <td class="uk-width-large">Srednia przejechanych kilometrow na jednym tankowaniu</td>
+                <td class="uk-form-width-medium" th:text="${#numbers.formatDecimal(avgDist, 1, 'DEFAULT', 2, 'DEFAULT')} + ' km'"></td>
+            </tr>
+            <tr>
+                <td class="uk-width-large">Ilość przejechanych kilometrów</td>
+                <td class="uk-form-width-medium" th:text="${#numbers.formatDecimal(sumDist, 1, 'DEFAULT', 2, 'DEFAULT')} + ' km'"></td>
+            </tr>
+            <tr>
+                <td class="uk-width-large">Srednie spalanie</td>
+                <td class="uk-form-width-medium" th:text="${#numbers.formatDecimal(avgFuelDist, 1, 'DEFAULT', 2, 'DEFAULT')} + ' l/100km'"></td>
+            </tr>
+            <tr>
+                <td class="uk-width-large">Sredni Koszt przejechania 100km (uwzgędniając tylko tankowanie)</td>
+                <td class="uk-form-width-medium" th:text="${#numbers.formatDecimal(avgFuelConsupt, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł/100km'"></td>
+            </tr>
+            <tr>
+                <td class="uk-width-large">Suma wydatków na paliwo</td>
+                <td class="uk-form-width-medium" th:text="${#numbers.formatDecimal(sumCost, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

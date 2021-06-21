@@ -7,6 +7,13 @@
     <link rel="stylesheet" th:href="@{/style.css}">
     <script th:src="@{js/uikit.min.js}"></script>
     <script th:src="@{js/uikit-icons.min.js}"></script>
+    <script>
+        function length50(string) {
+            var maxLength = 50;
+            var oSpan = document.getElementById('counter1');
+            oSpan.innerHTML = 'Pozostało Ci jeszcze ' + (maxLength - (string.length)) + ' znaków';
+        }
+    </script>
 </head>
 <body>
 <div class="uk-background-secondary uk-flex uk-flex-middle uk-flex-right" style="height: 50px">
@@ -15,6 +22,7 @@
        uk-icon="paint-bucket"></a>
     <a title="Koszty stałe" th:href="@{/constant}" class="uk-icon-link uk-margin-small" uk-icon="database"></a>
     <a title="Pozostałe wydatki" th:href="@{/other}" class="uk-icon-link uk-margin-small" uk-icon="more"></a>
+<!--    <a title="Statystyki" th:href="@{/stat}" class="uk-icon-link uk-margin-small" uk-icon="rss"></a>-->
 </div>
 <div class="uk-container  uk-background-muted uk-grid uk-padding-small">
     <div class="uk-width-1-4">
@@ -33,11 +41,8 @@
                     <div class="uk-margin-small">
                         <label class="uk-form-label uk-text-bold" for="description">Opis: </label>
                         <div class="uk-form-controls">
-                            <input class="uk-input uk-form-width-medium" id="description" type="text"
-                                   th:field="*{description}"
-                                   required="required">
-                            <p class="uk-margin-small" style="font-size: x-small">Liczba znaków powinna mieć długość od
-                                3 do 50</p>
+                            <input class="uk-input uk-form-width-medium" onkeyup="length50(this.value)" id="description" type="text" th:field="*{description}" required="required">
+                            <span id="counter1" style="font-size: x-small">Wprowadź od 3 - 50 znaków.</span><br/>
                         </div>
                     </div>
                     <div class="uk-margin-small">
