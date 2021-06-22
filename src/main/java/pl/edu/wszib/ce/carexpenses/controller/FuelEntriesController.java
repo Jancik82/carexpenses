@@ -5,13 +5,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import pl.edu.wszib.ce.carexpenses.model.FuelEntries;
 import pl.edu.wszib.ce.carexpenses.dao.FuelEntriesDao;
 import pl.edu.wszib.ce.carexpenses.service.FuelEntriesService;
 
 @Controller
-//@RequestMapping("/fuel")
 public class FuelEntriesController {
 
     @Autowired
@@ -38,7 +36,7 @@ public class FuelEntriesController {
         model.addAttribute("maxDist", fuelEntriesService.maxDistFuel());
         model.addAttribute("avgDist", fuelEntriesService.avgDistFuel());
         model.addAttribute("avgFuelConsupt", fuelEntriesService.avgFuelConsupt());
-                model.addAttribute("avgFuelDist", fuelEntriesService.avgFuelDist());
+        model.addAttribute("avgFuelDist", fuelEntriesService.avgFuelDist());
         return "fuelstat";
     }
 

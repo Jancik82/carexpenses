@@ -2,7 +2,6 @@ package pl.edu.wszib.ce.carexpenses.model;
 
 import com.sun.istack.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
-import pl.edu.wszib.ce.carexpenses.service.FuelEntriesServiceImpl;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;

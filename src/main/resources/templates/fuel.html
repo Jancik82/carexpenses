@@ -58,7 +58,6 @@
                     <th class="uk-width-medium">Data</th>
                     <th class="uk-width-medium">Zatankowane paliwo</th>
                     <th class="uk-width-medium">Przejechane kilometry</th>
-                    <th class="uk-width-medium">Srednie spalanie</th>
                     <th class="uk-width-medium">Zapłacono</th>
                 </tr>
                 </thead>
@@ -68,7 +67,6 @@
                     <td th:text="${#dates.format(fuel.refuelingDate, 'yyyy MM dd')}"></td>
                     <td th:text="${#numbers.formatDecimal(fuel.fueledFuel, 1, 'DEFAULT', 2, 'DEFAULT')} + ' l'"></td>
                     <td th:text="${#numbers.formatDecimal(fuel.distance, 1, 'DEFAULT', 2, 'DEFAULT')}"></td>
-                    <td th:text="${#numbers.formatDecimal(avgfuel, 1, 'DEFAULT', 2, 'DEFAULT')}"></td>
                     <td th:text="${#numbers.formatDecimal(fuel.cost, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
                 </tr>
                 </tbody>

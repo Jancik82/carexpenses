@@ -55,7 +55,7 @@ public class FuelEntriesServiceImpl implements FuelEntriesService {
 
     @Override
     public Float avgFuelDist() {
-        return fuelEntriesDao.avgFuelDist().floatValue();
+        return fuelEntriesDao.avgFuelDist();
     }
 
     @Override
