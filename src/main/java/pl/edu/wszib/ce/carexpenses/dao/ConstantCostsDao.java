@@ -8,27 +8,27 @@ import pl.edu.wszib.ce.carexpenses.model.ConstantCosts;
 @Repository
 public interface ConstantCostsDao extends CrudRepository<ConstantCosts, Long> {
 
-    @Query(value = "SELECT SUM(cost) FROM ConstantCosts")
+    @Query(value = "SELECT SUM(constantCost) FROM ConstantCosts")
     public Float sumCostConst();
 
-    @Query(value = "SELECT SUM(cost) FROM ConstantCosts WHERE description = 'Rata kredytu/leasingu'")
+    @Query(value = "SELECT SUM(constantCost) FROM ConstantCosts WHERE description = 'Rata kredytu/leasingu'")
     public Float sumInstallment();
 
-    @Query(value = "SELECT SUM(cost) FROM ConstantCosts WHERE description = 'Wynajem długoterminowy'")
+    @Query(value = "SELECT SUM(constantCost) FROM ConstantCosts WHERE description = 'Wynajem długoterminowy'")
     public Float sumRent();
 
-    @Query(value = "SELECT SUM(cost) FROM ConstantCosts WHERE description = 'Okresowe badanie techniczne'")
+    @Query(value = "SELECT SUM(constantCost) FROM ConstantCosts WHERE description = 'Okresowe badanie techniczne'")
     public Float sumTechExem();
 
-    @Query(value = "SELECT SUM(cost) FROM ConstantCosts WHERE description = 'Ubezpieczenie (OC)'")
+    @Query(value = "SELECT SUM(constantCost) FROM ConstantCosts WHERE description = 'Ubezpieczenie (OC)'")
     public Float sumInsuranceOC();
 
-    @Query(value = "SELECT SUM(cost) FROM ConstantCosts WHERE description = 'Ubezpieczenie (inne)'")
+    @Query(value = "SELECT SUM(constantCost) FROM ConstantCosts WHERE description = 'Ubezpieczenie (inne)'")
     public Float sumInsuranceOther();
 
-    @Query(value = "SELECT SUM(cost) FROM ConstantCosts WHERE description = 'Płatne miejsce parkowania'")
+    @Query(value = "SELECT SUM(constantCost) FROM ConstantCosts WHERE description = 'Płatne miejsce parkowania'")
     public Float sumPark();
 
-    @Query(value = "SELECT SUM(cost) FROM ConstantCosts WHERE description = 'Inne'")
+    @Query(value = "SELECT SUM(constantCost) FROM ConstantCosts WHERE description = 'Inne'")
     public Float sumOther();
 }

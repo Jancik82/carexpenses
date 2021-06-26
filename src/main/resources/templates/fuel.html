@@ -4,7 +4,8 @@
 <div class="uk-container uk-flex uk-flex-center uk-padding-small">
     <div class="uk-width-1-4">
         <div class="uk-container">
-            <form class="uk-form-stacked uk-align-left uk-flex uk-flex-left" th:object="${fueladd}" method="post" style="width: 100%">
+            <form class="uk-form-stacked uk-align-left uk-flex uk-flex-left" th:action="@{/fuel}" th:object="${fueladd}"
+                  method="post">
                 <fieldset>
                     <legend class="uk-legend uk-text-bold">Wprowadź dane</legend>
                     <div class="uk-margin-small">
@@ -12,35 +13,35 @@
                         <div class="uk-form-controls uk-margin-small">
                             <input class="uk-input uk-form-width-medium" type="date" th:field="*{refuelingDate}"
                                    required="required"/>
-                            <p class="uk-margin-small" style="font-size: x-small">Data nie może być z przyszłości.</p>
+                            <p th:if="${#fields.hasErrors('refuelingDate')}" th:errors="*{refuelingDate}"
+                               class="uk-margin-small" style="color: red; font-size: small"></p>
                         </div>
                     </div>
                     <div class="uk-margin-small">
                         <label class="uk-form-label uk-text-bold" for="fueledFuel">Zatankowane paliwo: </label>
                         <div class="uk-form-controls uk-margin-small">
                             <input class="uk-input uk-form-width-medium" id="fueledFuel" type="text"
-                                   th:field="*{fueledFuel}"
-                                   pattern="[0-9.]+" required="required">
-                            <p class="uk-margin-small" style="font-size: x-small">Podaj liczbę dodatnią. Wartość
-                                dziesiętną oddziel kropką.</p>
+                                   th:field="*{fueledFuel}" required="required">
+                            <p th:if="${#fields.hasErrors('fueledFuel')}" th:errors="*{fueledFuel}"
+                               class="uk-margin-small" style="color: red; font-size: small"></p>
                         </div>
                     </div>
                     <div class="uk-margin-small">
                         <label class="uk-form-label uk-text-bold" for="distance">Przejechane km: </label>
                         <div class="uk-form-controls uk-margin-small">
-                            <input class="uk-input uk-form-width-medium" id="distance" type="text" th:field="*{distance}"
-                                   pattern="[0-9.]+" required="required">
-                            <p class="uk-margin-small" style="font-size: x-small">
-                                Podaj liczbę dodatnią. Wartość dziesiętną oddziel kropką.</p>
+                            <input class="uk-input uk-form-width-medium"
+                                   id="distance" type="text" th:field="*{distance}" required="required">
+                            <p th:if="${#fields.hasErrors('distance')}" th:errors="*{distance}"
+                               class="uk-margin-small" style="color: red; font-size: small"></p>
                         </div>
                     </div>
                     <div class="uk-margin-small">
                         <label class="uk-form-label uk-text-bold" for="cost">Zapłacono: </label>
                         <div class="uk-form-controls uk-margin-small">
                             <input class="uk-input uk-form-width-medium" id="cost" type="text" th:field="*{cost}"
-                                   pattern="[0-9.]+" required="required">
-                            <p class="uk-margin-small" style="font-size: x-small">
-                                Podaj liczbę dodatnią. Wartość dziesiętną oddziel kropką.</p>
+                                   required="required">
+                            <p th:if="${#fields.hasErrors('cost')}" th:errors="*{cost}"
+                               class="uk-margin-small" style="color: red; font-size: small"></p>
                         </div>
                     </div>
                     <button type="submit" class="uk-button uk-button-primary uk-button-small">Zapisz</button>

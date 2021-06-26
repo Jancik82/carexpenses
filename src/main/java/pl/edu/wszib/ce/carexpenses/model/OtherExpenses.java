@@ -21,13 +21,15 @@ public class OtherExpenses {
 
     @NotNull
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @PastOrPresent
+    @PastOrPresent(message = "Data nie może być z przyszłości")
     private Date otherExpensesDate;
 
+    @NotNull
     @Size(min = 3, max = 50, message = "Liczba znaków powinna mieć długość od 3 do 50")
     private String description;
 
-    @Min(value = 1, message = "Wartość musi być liczbą dodatnią")
+    @NotNull
+    @Min(value = 1, message = "Podaj liczbę dodatnią. Wartość dziesiętną oddziel kropką")
     private Float cost;
 
     public OtherExpenses() {

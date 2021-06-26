@@ -1,19 +1,11 @@
 <!DOCTYPE html>
 <html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml" th:replace="~{fragments/layout :: layout(~{::.uk-container})}">
-<head>
-    <script>
-        function length50(string) {
-            var maxLength = 50;
-            var oSpan = document.getElementById('counter1');
-            oSpan.innerHTML = 'Pozostało Ci jeszcze ' + (maxLength - (string.length)) + ' znaków';
-        }
-    </script>
-</head>
 <body>
 <div class="uk-container uk-flex uk-flex-center uk-padding-small">
     <div class="uk-width-1-4">
         <div class="uk-container">
-            <form class="uk-form-stacked uk-align-left uk-flex uk-flex-left" th:object="${otheradd}" method="post">
+            <form class="uk-form-stacked uk-align-left uk-flex uk-flex-left" th:action="@{/other}"
+                  th:object="${otheradd}" method="post">
                 <fieldset>
                     <legend class="uk-legend uk-text-bold">Wprowadź dane</legend>
                     <div class="uk-margin-small">
@@ -21,23 +13,26 @@
                         <div class="uk-form-controls">
                             <input class="uk-input uk-form-width-medium" type="date" th:field="*{otherExpensesDate}"
                                    required="required"/>
-                            <p class="uk-margin-small" style="font-size: x-small">Data nie może być z przyszłości.</p>
+                            <p th:if="${#fields.hasErrors('otherExpensesDate')}" th:errors="*{otherExpensesDate}"
+                               class="uk-margin-small" style="color: red; font-size: small"></p>
                         </div>
                     </div>
                     <div class="uk-margin-small">
                         <label class="uk-form-label uk-text-bold" for="description">Opis: </label>
                         <div class="uk-form-controls">
-                            <input class="uk-input uk-form-width-medium" onkeyup="length50(this.value)" id="description" type="text" th:field="*{description}" required="required">
-                            <span id="counter1" style="font-size: x-small">Wprowadź od 3 - 50 znaków.</span><br/>
+                            <input class="uk-input uk-form-width-medium" id="description"
+                                   type="text" th:field="*{description}" required="required">
+                            <p th:if="${#fields.hasErrors('description')}" th:errors="*{description}"
+                               class="uk-margin-small" style="color: red; font-size: small"></p>
                         </div>
                     </div>
                     <div class="uk-margin-small">
                         <label class="uk-form-label uk-text-bold" for="cost">Zapłacono: </label>
                         <div class="uk-form-controls">
-                            <input class="uk-input uk-form-width-medium" id="cost" type="text" th:field="*{cost}"
-                                   pattern="[0-9.]+" required="required">
-                            <p class="uk-margin-small" style="font-size: x-small">Podaj liczbę dodatnią. Wartość
-                                dziesiętną oddziel kropką.</p>
+                            <input class="uk-input uk-form-width-medium" id="cost"
+                                   type="text" th:field="*{cost}" required="required">
+                            <p th:if="${#fields.hasErrors('cost')}" th:errors="*{cost}"
+                               class="uk-margin-small" style="color: red; font-size: small"></p>
                         </div>
                     </div>
                     <button type="submit" class="uk-button uk-button-primary uk-button-small">Zapisz</button>

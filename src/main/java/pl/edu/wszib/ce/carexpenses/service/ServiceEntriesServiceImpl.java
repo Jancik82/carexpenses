@@ -14,7 +14,7 @@ public class ServiceEntriesServiceImpl implements ServiceEntriesService {
 
     @Override
     public Float sumCostService() {
-        return serviceEntriesDao.sumCostService() ;
+        return serviceEntriesDao.sumCostService();
     }
 
     @Override

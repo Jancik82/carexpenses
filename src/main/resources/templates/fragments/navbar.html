@@ -5,27 +5,52 @@
     <title>Title</title>
 </head>
 <body>
-<div th:fragment="navbar" class="uk-background-secondary uk-flex uk-flex-middle uk-flex-right uk-navbar " style="height: 40px">
+<div th:fragment="navbar" class="uk-background-secondary uk-navbar uk-margin-small uk-flex uk-flex-wrap" uk-grid>
+    <div class="uk-navbar uk-navbar-left uk-flex-wrap">
         <ul class="uk-navbar-nav uk-margin-small">
+            <p class="uk-margin-small">Menu</p>
             <li>
                 <a title="Strona główna" th:href="@{/welcome}" class="uk-icon-link" uk-icon="home"></a>
             </li>
             <li>
-                <a title="Wydatki na zakup paliwa" th:href="@{/fuel}" class="uk-icon-link" uk-icon="paint-bucket"></a>
-            </li>
-            <li>
-                <a title="Wydatki serwisowe" th:href="@{/service}" class="uk-icon-link" uk-icon="cog"></a>
-            </li>
-            <li>
-                <a title="Koszty stałe" th:href="@{/constant}" class="uk-icon-link" uk-icon="database"></a>
-            </li>
-            <li>
-                <a title="Pozostałe wydatki" th:href="@{/other}" class="uk-icon-link" uk-icon="more"></a>
-            </li>
-            <li>
-                <a title="Statystyki tankowania" th:href="@{/fuelStat}" class="uk-icon-link" uk-icon="rss"></a>
+                <a title="Wyloguj" th:href="@{/welcome}" class="uk-icon-link" uk-icon="sign-out"></a>
             </li>
         </ul>
+    </div>
+    <div class="uk-navbar uk-navbar-center uk-flex-wrap">
+        <p class="uk-margin-small">Formularze</p>
+    <ul class="uk-navbar-nav uk-margin-small">
+        <li>
+            <a title="Paliwo" th:href="@{/fuel}" class="uk-icon-link" uk-icon="paint-bucket"></a>
+        </li>
+        <li>
+            <a title="Serwis" th:href="@{/service}" class="uk-icon-link" uk-icon="cog"></a>
+        </li>
+        <li>
+            <a title="Koszty stałe" th:href="@{/constant}" class="uk-icon-link" uk-icon="database"></a>
+        </li>
+        <li>
+            <a title="Różne" th:href="@{/other}" class="uk-icon-link" uk-icon="more"></a>
+        </li>
+    </ul>
+    </div>
+    <div class="uk-navbar uk-navbar-right uk-flex-wrap">
+        <p class="uk-margin-small">Statystyki</p>
+        <ul class="uk-navbar-nav uk-margin-small">
+            <li>
+                <a title="Paliwo" th:href="@{/fuelstat}" class="uk-icon-link" uk-icon="paint-bucket"></a>
+            </li>
+            <li>
+                <a title="Serwis" th:href="@{/servicestat}" class="uk-icon-link" uk-icon="cog"></a>
+            </li>
+            <li>
+                <a title="Koszty stałe" th:href="@{/constantstat}" class="uk-icon-link" uk-icon="database"></a>
+            </li>
+            <li>
+                <a title="Różne" th:href="@{/otherstat}" class="uk-icon-link" uk-icon="more"></a>
+            </li>
+        </ul>
+    </div>
 </div>
 </body>
 </html>

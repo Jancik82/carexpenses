@@ -37,5 +37,4 @@ public interface FuelEntriesDao extends CrudRepository<FuelEntries, Long> {
 
     @Query(value = "SELECT ((SUM(cost) * 100) / SUM(distance)) FROM FuelEntries")
     public Float avgFuelConsupt();
-
 }

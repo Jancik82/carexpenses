@@ -7,7 +7,7 @@ import pl.edu.wszib.ce.carexpenses.dao.ConstantCostsDao;
 
 @Transactional
 @Service
-public class ConstantCostServiceImpl implements ConstantCostService{
+public class ConstantCostServiceImpl implements ConstantCostService {
 
     @Autowired
     ConstantCostsDao constantCostsDao;

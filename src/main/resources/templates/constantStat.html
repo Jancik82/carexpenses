@@ -6,35 +6,43 @@
         <caption class="uk-text-bold uk-text-center">Statystyki koszty stałe</caption>
         <tr>
             <td class="uk-form-width-large">Rata kredytu/leasingu</td>
-            <td class="uk-form-width-medium" th:text="${#numbers.formatDecimal(sumInstallment, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
+            <td class="uk-form-width-medium"
+                th:text="${#numbers.formatDecimal(sumInstallment, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
         </tr>
         <tr>
             <td class="uk-width-large">Wynajem długoterminowy</td>
-            <td class="uk-form-width-medium" th:text="${#numbers.formatDecimal(sumRent, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
+            <td class="uk-form-width-medium"
+                th:text="${#numbers.formatDecimal(sumRent, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
         </tr>
         <tr>
             <td class="uk-width-large">Okresowe badanie technicznee</td>
-            <td class="uk-form-width-medium" th:text="${#numbers.formatDecimal(sumTechExem, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
+            <td class="uk-form-width-medium"
+                th:text="${#numbers.formatDecimal(sumTechExem, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
         </tr>
         <tr>
             <td class="uk-width-large">Ubezpieczenie (OC)</td>
-            <td class="uk-form-width-medium" th:text="${#numbers.formatDecimal(sumInsuranceOC, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
+            <td class="uk-form-width-medium"
+                th:text="${#numbers.formatDecimal(sumInsuranceOC, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
         </tr>
         <tr>
             <td class="uk-width-large">Ubezpieczenie (inne)</td>
-            <td class="uk-form-width-medium" th:text="${#numbers.formatDecimal(sumInsuranceOther, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
+            <td class="uk-form-width-medium"
+                th:text="${#numbers.formatDecimal(sumInsuranceOther, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
         </tr>
         <tr>
             <td class="uk-width-large">Płatne miejsce parkowania</td>
-            <td class="uk-form-width-medium" th:text="${#numbers.formatDecimal(sumPark, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
+            <td class="uk-form-width-medium"
+                th:text="${#numbers.formatDecimal(sumPark, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
         </tr>
         <tr>
             <td class="uk-width-large">Inne</td>
-            <td class="uk-form-width-medium" th:text="${#numbers.formatDecimal(sumOther, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
+            <td class="uk-form-width-medium"
+                th:text="${#numbers.formatDecimal(sumOther, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
         </tr>
         <tr>
             <td class="uk-width-large" style="background-color: #d2d2d2">Suma wydatków</td>
-            <td class="uk-form-width-medium" style="background-color: #d2d2d2" th:text="${#numbers.formatDecimal(sumCostConst, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
+            <td class="uk-form-width-medium" style="background-color: #d2d2d2"
+                th:text="${#numbers.formatDecimal(sumCostConst, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
         </tr>
     </table>
 </div>

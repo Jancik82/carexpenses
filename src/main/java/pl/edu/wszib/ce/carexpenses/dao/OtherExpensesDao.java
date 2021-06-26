@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import pl.edu.wszib.ce.carexpenses.model.OtherExpenses;
 
 @Repository
-public interface OtherExpensesDao extends CrudRepository <OtherExpenses, Long> {
+public interface OtherExpensesDao extends CrudRepository<OtherExpenses, Long> {
 
     @Query(value = "SELECT SUM(cost) FROM OtherExpenses ")
     public Float sumCostOther();
@@ -25,5 +25,4 @@ public interface OtherExpensesDao extends CrudRepository <OtherExpenses, Long> {
 
     @Query(value = "SELECT AVG(cost) FROM OtherExpenses ")
     public Float avgCostOther();
-
 }

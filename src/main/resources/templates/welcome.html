@@ -2,35 +2,67 @@
 <html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome</title>
+    <title>Car expenses</title>
     <link rel="stylesheet" th:href="@{/css/uikit.min.css}">
     <link rel="stylesheet" th:href="@{/style.css}">
     <script th:src="@{js/uikit.min.js}"></script>
     <script th:src="@{js/uikit-icons.min.js}"></script>
 </head>
 <body>
-<div class="uk-container uk-background-muted uk-grid uk-padding-small" style="width: 100%; height: 100vh">
-    <div class="uk-margin-medium uk-padding-small" style="width: 100%">
+<div class="uk-align-center uk-container uk-grid uk-padding-small">
+    <div class="uk-margin-medium uk-padding-small">
         <h2 class="uk-text-center uk-text-bold" style="color: black">Witaj w aplikacji Car Expenses</h2>
         <h4 class="uk-text-center uk-text-bold" style="color: black">Wydatki na samochód zawsze pod kontrolą</h4>
     </div>
-    <div class="uk-margin-medium" style="width: 100%">
-        <div class="uk-container uk-margin-medium">
-            <h4 class="uk-text-center uk-text-bold" style="color: black">Wybierz kategorię</h4>
-        </div>
-        <div class="uk-column-1-5">
-            <a th:href="@{/fuel}" class="uk-display-block uk-icon-link uk-margin-small" uk-icon="paint-bucket">
-                <p class="uk-text-center uk-text-bold uk-margin-medium" style="color: blue">Tankowanie</p></a>
-            <a th:href="@{/service}" class="uk-display-block uk-icon-link uk-margin-small" uk-icon="cog">
-                <p class="uk-text-center uk-text-bold uk-margin-medium" style="color: blue">Serwis</p></a>
-            <a th:href="@{/constant}" class="uk-display-block uk-icon-link uk-margin-small" uk-icon="database">
-                <p class="uk-text-center uk-text-bold uk-margin-medium" style="color: blue">Stałe</p></a>
-            <a th:href="@{/other}" class="uk-display-block uk-icon-link uk-margin-small" uk-icon="more">
-                <p class="uk-text-center uk-text-bold uk-margin-medium" style="color: blue">Różne</p></a>
-            <a th:href="@{/fuelstat}" class="uk-display-block uk-icon-link uk-margin-small" uk-icon="rss">
-                <p class="uk-text-center uk-text-bold uk-margin-medium" style="color: blue">Statystyki</p></a>
+
+    <div class="uk-section uk-section-secondary">
+        <div class="uk-container">
+
+            <div class="uk-grid-match uk-child-width-1-2@m" uk-grid>
+                <div>
+                    <h2 class="uk-margin-small">Wydatki</h2>
+                    <ul class="uk-margin-small">
+                        <li>
+                            <a title="Wydatki na zakup paliwa" th:href="@{/fuel}" class="uk-icon-link"
+                               uk-icon="paint-bucket">Paliwo  </a>
+                        </li>
+                        <li>
+                            <a title="Wydatki serwisowe" th:href="@{/service}" class="uk-icon-link" uk-icon="cog">Serwis  </a>
+                        </li>
+                        <li>
+                            <a title="Koszty stałe" th:href="@{/constant}" class="uk-icon-link" uk-icon="database">Koszty stałe  </a>
+                        </li>
+                        <li>
+                            <a title="Pozostałe wydatki" th:href="@{/other}" class="uk-icon-link" uk-icon="more">Różne  </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="uk-margin-small">Statystyki</h2>
+                    <ul class="uk-margin-small">
+                        <li>
+                            <a title="Statystyki na zakup paliwa" th:href="@{/fuelstat}" class="uk-icon-link"
+                               uk-icon="paint-bucket">Paliwo  </a>
+                        </li>
+                        <li>
+                            <a title="Statystyki serwisowe" th:href="@{/servicestat}" class="uk-icon-link"
+                               uk-icon="cog">Serwis  </a>
+                        </li>
+                        <li>
+                            <a title="Statystyki koszty stałe" th:href="@{/constantstat}" class="uk-icon-link"
+                               uk-icon="database">Koszty stałe</a>
+                        </li>
+                        <li>
+                            <a title="Statystyki pozostałe wydatki" th:href="@{/otherstat}" class="uk-icon-link"
+                               uk-icon="more">Różne  </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
     </div>
+
 </div>
 </body>
 </html>

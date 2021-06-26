@@ -41,5 +41,4 @@ public class OtherExpensesServiceImpl implements OtherExpensenService {
     public Float avgCostOther() {
         return otherExpensesDao.avgCostOther();
     }
-
 }

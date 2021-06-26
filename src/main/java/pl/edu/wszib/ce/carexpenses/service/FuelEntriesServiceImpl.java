@@ -62,5 +62,4 @@ public class FuelEntriesServiceImpl implements FuelEntriesService {
     public Float avgFuelConsupt() {
         return fuelEntriesDao.avgFuelConsupt();
     }
-
 }

@@ -25,5 +25,4 @@ public interface ServiceEntriesDao extends CrudRepository<ServiceEntries, Long> 
 
     @Query(value = "SELECT AVG(cost) FROM ServiceEntries")
     public Float avgCostService();
-
 }

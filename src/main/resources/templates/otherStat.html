@@ -6,27 +6,31 @@
         <caption class="uk-text-bold uk-text-center">Statystyki wydatki pozostałe</caption>
         <tr>
             <td class="uk-form-width-large">Minimalna kwota</td>
-            <td class="uk-form-width-medium" th:text="${#numbers.formatDecimal(minCost, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
+            <td class="uk-form-width-medium"
+                th:text="${#numbers.formatDecimal(minCostOther, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
         </tr>
         <tr>
             <td class="uk-width-large">Wydana na</td>
-            <td class="uk-form-width-medium" th:text="${minDescCost}"></td>
+            <td class="uk-form-width-medium" th:text="${maxDescriptionOther}"></td>
         </tr>
         <tr>
             <td class="uk-width-large">Maksymalna kwota</td>
-            <td class="uk-form-width-medium" th:text="${#numbers.formatDecimal(maxCost, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
+            <td class="uk-form-width-medium"
+                th:text="${#numbers.formatDecimal(maxCostOther, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
         </tr>
         <tr>
             <td class="uk-width-large">Wydana na</td>
-            <td class="uk-form-width-medium" th:text="${maxDescCost}"></td>
+            <td class="uk-form-width-medium" th:text="${maxDescriptionOther}"></td>
         </tr>
         <tr>
             <td class="uk-width-large">Średnia kwota</td>
-            <td class="uk-form-width-medium" th:text="${#numbers.formatDecimal(avgCost, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
+            <td class="uk-form-width-medium"
+                th:text="${#numbers.formatDecimal(avgCostOther, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
         </tr>
         <tr>
             <td class="uk-width-large" style="background-color: #d2d2d2">Suma wydatków</td>
-            <td class="uk-form-width-medium" style="background-color: #d2d2d2" th:text="${#numbers.formatDecimal(sumCost, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
+            <td class="uk-form-width-medium" style="background-color: #d2d2d2"
+                th:text="${#numbers.formatDecimal(sumCostOther, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
         </tr>
     </table>
 </div>
