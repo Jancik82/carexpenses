@@ -15,46 +15,49 @@
         <h4 class="uk-text-center uk-text-bold" style="color: black">Wydatki na samochód zawsze pod kontrolą</h4>
     </div>
 
-    <div class="uk-section uk-section-secondary">
-        <div class="uk-container">
+    <div class="uk-section uk-section-secondary uk-padding-small">
+        <div class="uk-container uk-padding-small">
 
             <div class="uk-grid-match uk-child-width-1-2@m" uk-grid>
                 <div>
-                    <h2 class="uk-margin-small">Wydatki</h2>
+                    <h3 class="uk-margin-small">Wydatki</h3>
                     <ul class="uk-margin-small">
                         <li>
                             <a title="Wydatki na zakup paliwa" th:href="@{/fuel}" class="uk-icon-link"
-                               uk-icon="paint-bucket">Paliwo  </a>
+                               uk-icon="paint-bucket">Paliwo </a>
                         </li>
                         <li>
-                            <a title="Wydatki serwisowe" th:href="@{/service}" class="uk-icon-link" uk-icon="cog">Serwis  </a>
+                            <a title="Wydatki serwisowe" th:href="@{/service}" class="uk-icon-link"
+                               uk-icon="cog">Serwis </a>
                         </li>
                         <li>
-                            <a title="Koszty stałe" th:href="@{/constant}" class="uk-icon-link" uk-icon="database">Koszty stałe  </a>
+                            <a title="Koszty stałe" th:href="@{/constant}" class="uk-icon-link" uk-icon="database">Koszty
+                                stałe </a>
                         </li>
                         <li>
-                            <a title="Pozostałe wydatki" th:href="@{/other}" class="uk-icon-link" uk-icon="more">Różne  </a>
+                            <a title="Pozostałe wydatki" th:href="@{/other}" class="uk-icon-link"
+                               uk-icon="more">Różne </a>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <h2 class="uk-margin-small">Statystyki</h2>
+                    <h3 class="uk-margin-small">Statystyki</h3>
                     <ul class="uk-margin-small">
                         <li>
                             <a title="Statystyki na zakup paliwa" th:href="@{/fuelstat}" class="uk-icon-link"
-                               uk-icon="paint-bucket">Paliwo  </a>
+                               uk-icon="paint-bucket">Paliwo </a>
                         </li>
                         <li>
                             <a title="Statystyki serwisowe" th:href="@{/servicestat}" class="uk-icon-link"
-                               uk-icon="cog">Serwis  </a>
+                               uk-icon="cog">Serwis </a>
                         </li>
                         <li>
                             <a title="Statystyki koszty stałe" th:href="@{/constantstat}" class="uk-icon-link"
-                               uk-icon="database">Koszty stałe</a>
+                               uk-icon="database">Koszty stałe </a>
                         </li>
                         <li>
                             <a title="Statystyki pozostałe wydatki" th:href="@{/otherstat}" class="uk-icon-link"
-                               uk-icon="more">Różne  </a>
+                               uk-icon="more">Różne </a>
                         </li>
                     </ul>
                 </div>
@@ -62,7 +65,39 @@
 
         </div>
     </div>
-
+    <table>
+        <caption align="top" style="font-size: large; color: black">Zestawienie wydatków</caption>
+        <tr>
+            <td class="uk-width-large" style="background-color: #d2d2d2">Paliwo</td>
+            <td class="uk-form-width-medium" style="background-color: #d2d2d2"
+                th:text="${#numbers.formatDecimal(sumCost, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
+        </tr>
+        <tr>
+            <td class="uk-width-large" style="background-color: #d2d2d2">Serwis</td>
+            <td class="uk-form-width-medium" style="background-color: #d2d2d2"
+                th:text="${#numbers.formatDecimal(sumCost, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
+        </tr>
+        <tr>
+            <td class="uk-width-large" style="background-color: #d2d2d2">Koszty stałe</td>
+            <td class="uk-form-width-medium" style="background-color: #d2d2d2"
+                th:text="${#numbers.formatDecimal(sumCostConst, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
+        </tr>
+        <tr>
+            <td class="uk-width-large" style="background-color: #d2d2d2">Różne</td>
+            <td class="uk-form-width-medium" style="background-color: #d2d2d2"
+                th:text="${#numbers.formatDecimal(sumCostOther, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
+        </tr>
+        <tr>
+            <td class="uk-width-large" style="background-color: #d2d2d2">Koszt przejechania 100 km</td>
+            <td class="uk-form-width-medium" style="background-color: #d2d2d2"
+                th:text="${#numbers.formatDecimal(costKm, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
+        </tr>
+        <tr>
+            <td class="uk-width-large" style="background-color: #d2d2d2">Całkowity koszt</td>
+            <td class="uk-form-width-medium" style="background-color: #d2d2d2"
+                th:text="${#numbers.formatDecimal(sumTotal, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
+        </tr>
+    </table>
 </div>
 </body>
 </html>
