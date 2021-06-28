@@ -11,8 +11,10 @@
 <body>
 <div class="uk-align-center uk-container uk-grid uk-padding-small">
     <div class="uk-margin-medium uk-padding-small">
+        <li>
+            <a title="Wyloguj" th:href="@{/logout}" class="uk-icon-link uk-position-top-right" uk-icon="icon: sign-out; ratio: 2">Wyloguj</a>
+        </li>
         <h2 class="uk-text-center uk-text-bold" style="color: black">Witaj w aplikacji Car Expenses</h2>
-        <h4 class="uk-text-center uk-text-bold" style="color: black">Wydatki na samochód zawsze pod kontrolą</h4>
     </div>
 
     <div class="uk-section uk-section-secondary uk-padding-small">
@@ -66,16 +68,16 @@
         </div>
     </div>
     <table>
-        <caption align="top" style="font-size: large; color: black">Zestawienie wydatków</caption>
+        <caption class="uk-text-bold" align="top" style="font-size: x-large; color: black">Zestawienie wydatków</caption>
         <tr>
             <td class="uk-width-large" style="background-color: #d2d2d2">Paliwo</td>
             <td class="uk-form-width-medium" style="background-color: #d2d2d2"
-                th:text="${#numbers.formatDecimal(sumCost, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
+                th:text="${#numbers.formatDecimal(sumCostFuel, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
         </tr>
         <tr>
             <td class="uk-width-large" style="background-color: #d2d2d2">Serwis</td>
             <td class="uk-form-width-medium" style="background-color: #d2d2d2"
-                th:text="${#numbers.formatDecimal(sumCost, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
+                th:text="${#numbers.formatDecimal(sumCostService, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
         </tr>
         <tr>
             <td class="uk-width-large" style="background-color: #d2d2d2">Koszty stałe</td>

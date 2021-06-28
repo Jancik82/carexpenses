@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Carexpenses</title>
+</head>
+<body>
+<h1 style="text-align: center">Car expenses</h1>
+<h3>Aplikacaja Car Expenses pozwala:</h3>
+<ul style="line-height: 1.5">
+    <li>kontrolować wydatki na samochód w 4 kategoriach:
+        <ul>
+            <li style="color: red"><span style="color: black">tankowanie</span></li>
+            <li style="color: red"><span style="color: black">serwis</span></li>
+            <li style="color: red"><span style="color: black">koszty stałe</span></li>
+            <li style="color: red"><span style="color: black">inne wydatki</span></li>
+        </ul>
+    </li>
+    <li>prowadzi szczegółowe statystyki</li>
+    <li>prowadzi zestawienie kosztów</li>
+</ul>
+<h2 style="text-align: center">Miej wydatki na Swój samochód zawsze pod kontrolą</h2>
+<div style="text-align: center">
+    <a th:href="@{/welcome}"><input type="button" value="Wchodzę"
+                                    style="height: 100px; width: 200px; color: red; font-size: xx-large"/></a>
+</div>
+
+</body>
+</html>
