@@ -25,11 +25,11 @@ public class ServiceEntries {
     private Date serviceDate;
 
     @NotNull
-    @Size(min = 3, max = 50, message = "Liczba znaków powinna mieć długość od 3 do 50")
+    @Size(min = 3, max = 50, message = "Opis powinien zawierać od 3 do 50 znaków")
     private String description;
 
     @NotNull
-    @Min(value = 1, message = "Wartość musi być liczbą dodatnią")
+    @Min(value = 1, message = "Podaj liczbę dodatnią - wartość dziesiętną oddziel kropką")
     private Float cost;
 
     public ServiceEntries() {

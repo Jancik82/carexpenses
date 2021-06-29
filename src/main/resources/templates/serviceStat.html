@@ -23,13 +23,13 @@
             <td class="uk-form-width-medium" th:text="${maxDescCost}"></td>
         </tr>
         <tr>
-            <td class="uk-width-large">Średni kwota</td>
+            <td class="uk-width-large">Średnia kwota</td>
             <td class="uk-form-width-medium"
                 th:text="${#numbers.formatDecimal(avgCost, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
         </tr>
         <tr>
-            <td class="uk-width-large" style="background-color: #d2d2d2">Suma wydatków</td>
-            <td class="uk-form-width-medium" style="background-color: #d2d2d2"
+            <td class="uk-width-large uk-text-bold" style="background-color: #d2d2d2">Suma wydatków</td>
+            <td class="uk-form-width-medium uk-text-bold" style="background-color: #d2d2d2"
                 th:text="${#numbers.formatDecimal(sumCost, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
         </tr>
     </table>

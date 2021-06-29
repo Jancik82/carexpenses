@@ -15,7 +15,7 @@
                 th:text="${#numbers.formatDecimal(maxCost, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
         </tr>
         <tr>
-            <td class="uk-width-large">Średni kwota wydana na jedno tankowanie</td>
+            <td class="uk-width-large">Średnia kwota wydana na jedno tankowanie</td>
             <td class="uk-form-width-medium"
                 th:text="${#numbers.formatDecimal(avgCost, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
         </tr>
@@ -30,7 +30,7 @@
                 th:text="${#numbers.formatDecimal(maxDist, 1, 'DEFAULT', 2, 'DEFAULT')} + ' km'"></td>
         </tr>
         <tr>
-            <td class="uk-width-large">Średni przejechanych kilometrow na jednym tankowaniu</td>
+            <td class="uk-width-large">Średnia przejechanych kilometrów na jednym tankowaniu</td>
             <td class="uk-form-width-medium"
                 th:text="${#numbers.formatDecimal(avgDist, 1, 'DEFAULT', 2, 'DEFAULT')} + ' km'"></td>
         </tr>
@@ -45,13 +45,13 @@
                 th:text="${#numbers.formatDecimal(avgFuelDist, 1, 'DEFAULT', 2, 'DEFAULT')} + ' l/100km'"></td>
         </tr>
         <tr>
-            <td class="uk-width-large">Średni Koszt przejechania 100km (uwzgędniając tylko tankowanie)</td>
+            <td class="uk-width-large">Średni koszt przejechania 100 km (uwzgędniając tylko tankowanie)</td>
             <td class="uk-form-width-medium"
                 th:text="${#numbers.formatDecimal(avgFuelConsupt, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł/100km'"></td>
         </tr>
         <tr>
-            <td class="uk-width-large" style="background-color: #d2d2d2">Suma wydatków na paliwo</td>
-            <td class="uk-form-width-medium" style="background-color: #d2d2d2"
+            <td class="uk-width-large uk-text-bold" style="background-color: #d2d2d2">Suma wydatków na paliwo</td>
+            <td class="uk-form-width-medium uk-text-bold" style="background-color: #d2d2d2"
                 th:text="${#numbers.formatDecimal(sumCost, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
         </tr>
     </table>

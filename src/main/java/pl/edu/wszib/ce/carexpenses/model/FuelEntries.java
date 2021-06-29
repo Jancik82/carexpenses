@@ -24,15 +24,15 @@ public class FuelEntries {
     private Date refuelingDate;
 
     @NotNull
-    @Min(value = 1, message = "Podaj liczbę dodatnią. Wartość dziesiętną oddziel kropką")
+    @Min(value = 1, message = "Podaj liczbę dodatnią - wartość dziesiętną oddziel kropką")
     private Float fueledFuel;
 
     @NotNull
-    @Min(value = 1, message = "Podaj liczbę dodatnią. Wartość dziesiętną oddziel kropką")
+    @Min(value = 1, message = "Podaj liczbę dodatnią - wartość dziesiętną oddziel kropką")
     private Float distance;
 
     @NotNull
-    @Min(value = 1, message = "Podaj liczbę dodatnią. Wartość dziesiętną oddziel kropką")
+    @Min(value = 1, message = "Podaj liczbę dodatnią - wartość dziesiętną oddziel kropką")
     private Float cost;
 
     public FuelEntries() {

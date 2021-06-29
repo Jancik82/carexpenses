@@ -90,14 +90,14 @@
                 th:text="${#numbers.formatDecimal(sumCostOther, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
         </tr>
         <tr>
+            <td class="uk-width-large uk-text-bold" style="background-color: #d2d2d2">Całkowity koszt</td>
+            <td class="uk-form-width-medium uk-text-bold" style="background-color: #d2d2d2"
+                th:text="${#numbers.formatDecimal(sumTotal, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
+        </tr>
+        <tr>
             <td class="uk-width-large" style="background-color: #d2d2d2">Koszt przejechania 100 km</td>
             <td class="uk-form-width-medium" style="background-color: #d2d2d2"
                 th:text="${#numbers.formatDecimal(costKm, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
-        </tr>
-        <tr>
-            <td class="uk-width-large" style="background-color: #d2d2d2">Całkowity koszt</td>
-            <td class="uk-form-width-medium" style="background-color: #d2d2d2"
-                th:text="${#numbers.formatDecimal(sumTotal, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
         </tr>
     </table>
 </div>
