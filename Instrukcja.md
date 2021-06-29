@@ -2,11 +2,11 @@
 
 Aplikację można uruchomić na dwa sposoby:
 1. Github -  klonując kod z repozytorium: https://github.com/Jancik82/carexpenses.git
-2. Heroku -  przechodząc po adres https://mycarexpenses.herokuapp.com/
+2. Heroku -  przechodząc pod adres https://mycarexpenses.herokuapp.com/
 
 ------------
 
-##Uruchomienie z Github:
+## Uruchomienie z Github:
 
 Do uruchomienia aplikacji potrzeby jest dotęp do dowolnej bazy danych
 Aplikacja jest skonfigurowana pod bazę POSTGRESQL oraz MS SQL
@@ -25,7 +25,7 @@ Aplikacja jest skonfigurowana pod bazę POSTGRESQL oraz MS SQL
 
 ------------
 
-##Uruchomienie z Heroku:
+## Uruchomienie z Heroku:
 1. Uruchomić przeglądarkę internetową i przejść pod adres https://carexpenses.herokuapp.com/
 2. Nacisnąć przycisk "wchodzę"
 3. Zalogować się do aplikacji (Username: user, Password: user1)
