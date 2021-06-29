@@ -2,7 +2,7 @@
 
 Aplikację można uruchomić na dwa sposoby:
 1. Github -  klonując kod z repozytorium: https://github.com/Jancik82/carexpenses.git
-2. Heroku -  przechodząc po adres https://carexpenses.herokuapp.com/
+2. Heroku -  przechodząc po adres https://mycarexpenses.herokuapp.com/
 
 ------------
 
