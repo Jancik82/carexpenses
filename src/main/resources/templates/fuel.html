@@ -7,7 +7,7 @@
             <form class="uk-form-stacked uk-align-left uk-flex uk-flex-left" th:action="@{/fuel}" th:object="${fueladd}"
                   method="post">
                 <fieldset>
-                    <legend class="uk-legend uk-text-bold">Wprowadź dane</legend>
+                    <legend class="uk-legend uk-text-bold" style="color: #0f6ecd">Wprowadź dane</legend>
                     <div class="uk-margin-small">
                         <label class="uk-form-label uk-text-bold">Data tankowania: </label>
                         <div class="uk-form-controls uk-margin-small">
@@ -21,7 +21,9 @@
                         <label class="uk-form-label uk-text-bold" for="fueledFuel">Zatankowane paliwo: </label>
                         <div class="uk-form-controls uk-margin-small">
                             <input class="uk-input uk-form-width-medium" id="fueledFuel" type="text"
-                                   th:field="*{fueledFuel}" required="required">
+                                   th:field="*{fueledFuel}" pattern="((?:\d+\.\d*)|(?:\d*\.?\d+))"
+                                   title="Podaj liczbę dodatnią - wartość dziesiętną oddziel kropką"
+                                   required="required">
                             <p th:if="${#fields.hasErrors('fueledFuel')}" th:errors="*{fueledFuel}"
                                class="uk-margin-small" style="color: red; font-size: small"></p>
                         </div>
@@ -30,7 +32,10 @@
                         <label class="uk-form-label uk-text-bold" for="distance">Przejechane km: </label>
                         <div class="uk-form-controls uk-margin-small">
                             <input class="uk-input uk-form-width-medium"
-                                   id="distance" type="text" th:field="*{distance}" required="required">
+                                   id="distance" type="text" th:field="*{distance}"
+                                   pattern="((?:\d+\.\d*)|(?:\d*\.?\d+))"
+                                   title="Podaj liczbę dodatnią - wartość dziesiętną oddziel kropką"
+                                   required="required">
                             <p th:if="${#fields.hasErrors('distance')}" th:errors="*{distance}"
                                class="uk-margin-small" style="color: red; font-size: small"></p>
                         </div>
@@ -39,6 +44,8 @@
                         <label class="uk-form-label uk-text-bold" for="cost">Zapłacono: </label>
                         <div class="uk-form-controls uk-margin-small">
                             <input class="uk-input uk-form-width-medium" id="cost" type="text" th:field="*{cost}"
+                                   pattern="((?:\d+\.\d*)|(?:\d*\.?\d+))"
+                                   title="Podaj liczbę dodatnią - wartość dziesiętną oddziel kropką"
                                    required="required">
                             <p th:if="${#fields.hasErrors('cost')}" th:errors="*{cost}"
                                class="uk-margin-small" style="color: red; font-size: small"></p>
@@ -53,8 +60,8 @@
         <div class="uk-container">
             <table class="uk-align-right" border="2" style="width: 100%; table-layout: fixed">
                 <caption class="uk-text-bold uk-text-center">Tabela tankowania</caption>
-                <thead>
-                <tr>
+                <thead style="color: black">
+                <tr style="background-color: #0f6ecd">
                     <th class="uk-width-small">Id</th>
                     <th class="uk-width-medium">Data</th>
                     <th class="uk-width-medium">Zatankowane paliwo</th>

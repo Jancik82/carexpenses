@@ -2,7 +2,7 @@
 <html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml" th:replace="~{fragments/layout :: layout(~{::.uk-container})}">
 <body>
 <div class="uk-container uk-flex uk-flex-center uk-padding-small">
-    <table class="uk-align-right" border="2" style="width: 100%; table-layout: fixed">
+    <table class="uk-align-right" border="2" style="table-layout: fixed">
         <caption class="uk-text-bold uk-text-center">Statystyki tankowania</caption>
         <tr>
             <td class="uk-form-width-large">Minimalna kwota wydana na jedno tankowanie</td>
@@ -50,8 +50,8 @@
                 th:text="${#numbers.formatDecimal(avgFuelConsupt, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł/100km'"></td>
         </tr>
         <tr>
-            <td class="uk-width-large uk-text-bold" style="background-color: #d2d2d2">Suma wydatków na paliwo</td>
-            <td class="uk-form-width-medium uk-text-bold" style="background-color: #d2d2d2"
+            <td class="uk-width-large uk-text-bold" style="background-color: #0f6ecd; color: black">Suma wydatków na paliwo</td>
+            <td class="uk-form-width-medium uk-text-bold" style="background-color: #0f6ecd; color: black"
                 th:text="${#numbers.formatDecimal(sumCost, 1, 'DEFAULT', 2, 'DEFAULT')} + ' zł'"></td>
         </tr>
     </table>

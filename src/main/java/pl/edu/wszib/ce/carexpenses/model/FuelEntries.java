@@ -7,8 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.PastOrPresent;
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 import java.util.Date;
 
 @Entity
@@ -24,17 +24,19 @@ public class FuelEntries {
     private Date refuelingDate;
 
     @NotNull
-    @Min(value = 1, message = "Podaj liczbę dodatnią - wartość dziesiętną oddziel kropką")
+    @Min(value = 1, message = "Wartość musi być równa lub większa od 1")
+    @Max(value = 200, message = "Wartość musi być równa lub mniejsza od 200")
     private Float fueledFuel;
 
     @NotNull
-    @Min(value = 1, message = "Podaj liczbę dodatnią - wartość dziesiętną oddziel kropką")
+    @Min(value = 1, message = "Wartość musi być równa lub większa od 1")
+    @Max(value = 3000, message = "Wartość musi być równa lub mniejsza od 3000")
     private Float distance;
 
     @NotNull
-    @Min(value = 1, message = "Podaj liczbę dodatnią - wartość dziesiętną oddziel kropką")
+    @Min(value = 1, message = "Wartość musi być równa lub większa od 1")
+    @Max(value = 5000, message = "Wartość musi być równa lub mniejsza od 5000")
     private Float cost;
-
     public FuelEntries() {
     }
 

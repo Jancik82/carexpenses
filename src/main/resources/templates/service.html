@@ -7,7 +7,7 @@
             <form class="uk-form-stacked uk-align-left uk-flex uk-flex-left" th:action="@{/service}"
                   th:object="${serviceadd}" method="post">
                 <fieldset>
-                    <legend class="uk-legend uk-text-bold">Wprowadź dane</legend>
+                    <legend class="uk-legend uk-text-bold" style="color: #0f6ecd">Wprowadź dane</legend>
                     <div class="uk-margin-small">
                         <label class="uk-form-label uk-text-bold">Data: </label>
                         <div class="uk-form-controls">
@@ -30,6 +30,8 @@
                         <label class="uk-form-label uk-text-bold" for="cost">Zapłacono: </label>
                         <div class="uk-form-controls">
                             <input class="uk-input uk-form-width-medium" id="cost" type="text" th:field="*{cost}"
+                                   pattern="((?:\d+\.\d*)|(?:\d*\.?\d+))"
+                                   title="Podaj liczbę dodatnią - wartość dziesiętną oddziel kropką"
                                    required="required">
                             <p th:if="${#fields.hasErrors('cost')}" th:errors="*{cost}"
                                class="uk-margin-small" style="color: red; font-size: small"></p>
@@ -44,8 +46,8 @@
         <div class="uk-container">
             <table class="uk-align-right" border="2" style="width: 100%; table-layout: fixed">
                 <caption style="width: 100%" class="uk-text-bold uk-text-center">Tabela serwisowa</caption>
-                <thead>
-                <tr>
+                <thead style="color: black">
+                <tr style="background-color: #0f6ecd">
                     <th class="uk-width-small">Id</th>
                     <th class="uk-width-medium">Data</th>
                     <th class="uk-width-2xlarge">Opis</th>

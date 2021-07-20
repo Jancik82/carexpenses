@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Size;
@@ -29,7 +30,8 @@ public class OtherExpenses {
     private String description;
 
     @NotNull
-    @Min(value = 1, message = "Podaj liczbę dodatnią - wartość dziesiętną oddziel kropką")
+    @Min(value = 1, message = "Wartość musi być równa lub większa od 1")
+    @Max(value = 50000, message = "Wartość musi być równa lub mniejsza od 50000")
     private Float cost;
 
     public OtherExpenses() {
